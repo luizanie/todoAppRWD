@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background-color: #874945;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    background-color: #828644;
+    padding: 20px;
+}
+
+h2 {
+    color: white;
+    text-transform: uppercase;
+    margin: 20px 10px;
+    text-align: center;
+}
+
+form {
+    margin-left: 10px;
+}
+
+input.zad,
+button.addTask {
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+input.zad {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+button.addTask {
+    line-height: 20px;
+    color: white;
+    background-color: #451F1C;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+button.addTask:hover {
+    background-color: white;
+    color: #451F1C;
+}
+
+input:focus,
+button.addTask:focus {
+    outline: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+ul>li {
+    font-size: 20px;
+    width: 100%;
+    margin: 15px;
+    word-wrap: break-word;
+}
+
+ul>li span {
+    float: right;
+    margin-right: 20px;
+    transition: 0.3s linear;
+}
+
+
+.fa-trash-alt {
+    color: #451F1C;
+}
+
+.fa-trash-alt:hover {
+    color: #8b2222;
+}
+
+ul>li span i {
+    cursor: pointer;
+}
+
+/* Mobile First */
+@media (orientation:portrait) and (min-width:768px) {
+    .container {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    input.zad,
+    button.addTask {
+        font-size: 40px;
+        height: 70px;
+        margin-bottom: 30px;
+    }
+
+    ul>li {
+        font-size: 40px;
+    }
+}
+
+
+@media (orientation:landscape) and (min-width:768px) {
+    .container {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    input.zad,
+    button.addTask {
+        font-size: 40px;
+        height: 90px;
+    }
+
+    input.zad {
+        float: left;
+        width: 50%;
+    }
+
+    button.addTask {
+        float: right;
+        width: 40%;
+    }
+
+    ul>li {
+        font-size: 40px;
+    }
+}
