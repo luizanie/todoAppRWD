@@ -14,66 +14,65 @@ body {
     width: 100vw;
     background-color: #828644;
     padding: 20px;
-}
-
-h2 {
-    color: white;
-    text-transform: uppercase;
-    margin: 20px 10px;
-    text-align: center;
-}
-
-form {
-    margin-left: 10px;
-}
-
-input.zad,
-button.addTask {
-    height: 40px;
-    width: 100%;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-input.zad {
-    border: 2px solid black;
-    padding: 10px;
-}
-
-button.addTask {
-    line-height: 20px;
-    color: white;
-    background-color: #451F1C;
-    border: 2px solid black;
-    cursor: pointer;
-}
-
-button.addTask:hover {
-    background-color: white;
-    color: #451F1C;
-}
-
-input:focus,
-button.addTask:focus {
-    outline: none;
-}
 
 
-ul {
-    list-style: none;
-}
+    h2 {
+        color: white;
+        text-transform: uppercase;
+        margin: 20px 10px;
+        text-align: center;
+    }
 
-ul>li {
-    font-size: 20px;
-    width: 100%;
-    margin: 15px;
-    word-wrap: break-word;
-}
+    form {
+        margin-left: 10px;
 
-ul>li span {
-    float: right;
-    margin-right: 20px;
-    transition: 0.3s linear;
+        input.zad,
+        button.addTask {
+            height: 40px;
+            width: 100%;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        input.zad {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        button.addTask {
+            line-height: 20px;
+            color: white;
+            background-color: #451F1C;
+            border: 2px solid black;
+            cursor: pointer;
+
+            &:hover {
+                background-color: white;
+                color: #451F1C;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            font-size: 20px;
+            width: 100%;
+            margin: 15px;
+            word-wrap: break-word;
+
+            span {
+                float: right;
+                margin-right: 20px;
+                transition: 0.3s linear;
+
+                i {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
 
 
@@ -85,9 +84,6 @@ ul>li span {
     color: #8b2222;
 }
 
-ul>li span i {
-    cursor: pointer;
-}
 
 /* Mobile First */
 @media (orientation:portrait) and (min-width:768px) {

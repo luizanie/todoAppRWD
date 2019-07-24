@@ -1,0 +1,22 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo app JavaScript Responsive Web Design",
+  "main": "main.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizanie/todoAppRWD.git"
+  },
+  "author": "LN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luizanie/todoAppRWD/issues"
+  },
+  "homepage": "https://github.com/luizanie/todoAppRWD#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

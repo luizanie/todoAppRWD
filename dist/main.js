@@ -6,7 +6,13 @@ const input = document.querySelector('input');
 const date = document.querySelector('.date');
 const items = document.querySelector('.elem');
 
-//dodanie aktualnej daty, dnia
+var data = (localStorage.getItem("todoList")) ? JSON.parse(localStorage.getItem('todoList')) : {
+    todo: [],
+}
+
+
+
+//dodanie aktualnej daty
 let today = new Date().toLocaleDateString();
 date.innerText = `${today}`;
 
@@ -21,11 +27,29 @@ const ChangeNumber = () => {
     }
 }
 
+
+//dodawanie do LocalStorage
+function dataObjectUpdated() {
+    localStorage.setItem("todoList", JSON.stringify(data));
+}
+
+function renderTodoList() {
+    if (!data.todo.length) return;
+    for (var i = 0; i < data.todo.length; i++) {
+        var value = data.todo[i];
+        addTask(value);
+    }
+}
+
 //odejmowanie zadan
 const removeTask = (e) => {
     e.target.parentNode.parentNode.remove();
     taskNumber.textContent = listItems.length;
     ChangeNumber();
+
+    data.todo.splice(data.todo.indexOf(removeTask), 1);
+    dataObjectUpdated();
+
 }
 
 //dodawanie zadan
@@ -49,8 +73,13 @@ const addTask = (e) => {
     taskNumber.innerText = listItems.length;
     ChangeNumber();
 
+    data.todo.push(titleTask);
+
     task.querySelector('span').addEventListener('click', removeTask);
+    dataObjectUpdated();
+
 }
 
+form.addEventListener('submit', addTask);
 
-form.addEventListener('submit', addTask)
+// renderTodoList();
