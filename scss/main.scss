@@ -4,51 +4,86 @@
     box-sizing: border-box;
 }
 
+$colors:(BgColor:#4f3d46,
+    ConColor:#b3a790,
+    BtnColor: #ddd,
+    TextColor:#4f3d46,
+);
+
+$margin:20px;
+$height:50px;
+$fontSize:2rem;
+
+$desktop:768px;
+
+@mixin desktop {
+    @media (min-width:#{$desktop}) {
+        @content;
+    }
+}
+
 body {
     position: relative;
-    background-color: #874945;
+    background-color: map-get($colors, BgColor);
     font-family: 'Roboto', sans-serif;
 }
 
 .container {
     width: 100vw;
-    background-color: #828644;
+    background-color: map-get($colors, ConColor);
     padding: 20px;
 
+    @include desktop() {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        width: 80%;
+        transform: translateX(-50%);
+    }
 
     h2 {
-        color: white;
+        color: map-get($colors, TextColor);
+        font-size: $fontSize;
         text-transform: uppercase;
-        margin: 20px 10px;
+        margin: $margin $margin*0.5;
         text-align: center;
+
+        @include desktop() {
+            font-size: $fontSize*1.6;
+        }
     }
 
     form {
-        margin-left: 10px;
+        margin-left: $margin*0.5;
 
-        input.zad,
-        button.addTask {
-            height: 40px;
+        .zad,
+        .addTask {
+            display: inline-block;
+            height: $height;
             width: 100%;
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: $fontSize;
+            margin: $margin auto;
+            background-color: map-get($colors, BtnColor);
+            border: 2px solid black;
+
+            @include desktop() {
+                font-size: $fontSize*2;
+                height: $height*2;
+            }
         }
 
-        input.zad {
-            border: 2px solid black;
-            padding: 10px;
+        .zad {
+            padding: $margin*0.5;
         }
 
-        button.addTask {
-            line-height: 20px;
-            color: white;
-            background-color: #451F1C;
-            border: 2px solid black;
+        .addTask {
+            color: map-get($colors, TextColor);
+            font-weight: 500;
             cursor: pointer;
 
             &:hover {
-                background-color: white;
-                color: #451F1C;
+                background-color: map-get($colors, TextColor);
+                color: map-get($colors, BtnColor);
             }
         }
     }
@@ -57,14 +92,18 @@ body {
         list-style: none;
 
         li {
-            font-size: 20px;
+            font-size: $fontSize;
             width: 100%;
-            margin: 15px;
+            margin: $margin;
             word-wrap: break-word;
+
+            @include desktop() {
+                font-size: $fontSize*1.4;
+            }
 
             span {
                 float: right;
-                margin-right: 20px;
+                margin-right: $margin;
                 transition: 0.3s linear;
 
                 i {
@@ -77,71 +116,9 @@ body {
 
 
 .fa-trash-alt {
-    color: #451F1C;
+    color: map-get($colors, BgColor);
 }
 
 .fa-trash-alt:hover {
     color: #8b2222;
-}
-
-
-/* Mobile First */
-@media (orientation:portrait) and (min-width:768px) {
-    .container {
-        position: absolute;
-        top: 100px;
-        left: 50%;
-        width: 80%;
-        transform: translateX(-50%);
-    }
-
-    h2 {
-        font-size: 50px;
-    }
-
-    input.zad,
-    button.addTask {
-        font-size: 40px;
-        height: 70px;
-        margin-bottom: 30px;
-    }
-
-    ul>li {
-        font-size: 40px;
-    }
-}
-
-
-@media (orientation:landscape) and (min-width:768px) {
-    .container {
-        position: absolute;
-        top: 100px;
-        left: 50%;
-        width: 80%;
-        transform: translateX(-50%);
-    }
-
-    h2 {
-        font-size: 50px;
-    }
-
-    input.zad,
-    button.addTask {
-        font-size: 40px;
-        height: 90px;
-    }
-
-    input.zad {
-        float: left;
-        width: 50%;
-    }
-
-    button.addTask {
-        float: right;
-        width: 40%;
-    }
-
-    ul>li {
-        font-size: 40px;
-    }
 }

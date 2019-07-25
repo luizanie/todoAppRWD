@@ -1,140 +1,77 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   position: relative;
-  background-color: #874945;
-  font-family: 'Roboto', sans-serif;
-}
+  background-color: #4f3d46;
+  font-family: 'Roboto', sans-serif; }
 
 .container {
   width: 100vw;
-  background-color: #828644;
-  padding: 20px;
-}
-
-.container h2 {
-  color: white;
-  text-transform: uppercase;
-  margin: 20px 10px;
-  text-align: center;
-}
-
-.container form {
-  margin-left: 10px;
-}
-
-.container form input.zad,
-.container form button.addTask {
-  height: 40px;
-  width: 100%;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.container form input.zad {
-  border: 2px solid black;
-  padding: 10px;
-}
-
-.container form button.addTask {
-  line-height: 20px;
-  color: white;
-  background-color: #451F1C;
-  border: 2px solid black;
-  cursor: pointer;
-}
-
-.container form button.addTask:hover {
-  background-color: white;
-  color: #451F1C;
-}
-
-.container ul {
-  list-style: none;
-}
-
-.container ul li {
-  font-size: 20px;
-  width: 100%;
-  margin: 15px;
-  word-wrap: break-word;
-}
-
-.container ul li span {
-  float: right;
-  margin-right: 20px;
-  -webkit-transition: 0.3s linear;
-  transition: 0.3s linear;
-}
-
-.container ul li span i {
-  cursor: pointer;
-}
+  background-color: #b3a790;
+  padding: 20px; }
+  @media (min-width: 768px) {
+    .container {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      width: 80%;
+      transform: translateX(-50%); } }
+  .container h2 {
+    color: #4f3d46;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 20px 10px;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .container h2 {
+        font-size: 3.2rem; } }
+  .container form {
+    margin-left: 10px; }
+    .container form .zad,
+    .container form .addTask {
+      display: inline-block;
+      height: 50px;
+      width: 100%;
+      font-size: 2rem;
+      margin: 20px auto;
+      background-color: #ddd;
+      border: 2px solid black; }
+      @media (min-width: 768px) {
+        .container form .zad,
+        .container form .addTask {
+          font-size: 4rem;
+          height: 100px; } }
+    .container form .zad {
+      padding: 10px; }
+    .container form .addTask {
+      color: #4f3d46;
+      font-weight: 500;
+      cursor: pointer; }
+      .container form .addTask:hover {
+        background-color: #4f3d46;
+        color: #ddd; }
+  .container ul {
+    list-style: none; }
+    .container ul li {
+      font-size: 2rem;
+      width: 100%;
+      margin: 20px;
+      word-wrap: break-word; }
+      @media (min-width: 768px) {
+        .container ul li {
+          font-size: 2.8rem; } }
+      .container ul li span {
+        float: right;
+        margin-right: 20px;
+        transition: 0.3s linear; }
+        .container ul li span i {
+          cursor: pointer; }
 
 .fa-trash-alt {
-  color: #451F1C;
-}
+  color: #4f3d46; }
 
 .fa-trash-alt:hover {
-  color: #8b2222;
-}
-
-/* Mobile First */
-@media (orientation: portrait) and (min-width: 768px) {
-  .container {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    width: 80%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-  h2 {
-    font-size: 50px;
-  }
-  input.zad,
-  button.addTask {
-    font-size: 40px;
-    height: 70px;
-    margin-bottom: 30px;
-  }
-  ul > li {
-    font-size: 40px;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 768px) {
-  .container {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    width: 80%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-  h2 {
-    font-size: 50px;
-  }
-  input.zad,
-  button.addTask {
-    font-size: 40px;
-    height: 90px;
-  }
-  input.zad {
-    float: left;
-    width: 50%;
-  }
-  button.addTask {
-    float: right;
-    width: 40%;
-  }
-  ul > li {
-    font-size: 40px;
-  }
-}
-/*# sourceMappingURL=main.css.map */
+  color: #8b2222; }
